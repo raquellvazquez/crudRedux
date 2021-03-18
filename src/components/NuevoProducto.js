@@ -6,7 +6,7 @@ import {crearNuevoProductoAction} from '../actions/productoActions';
 
 
 
-const NuevoProducto = () => {
+const NuevoProducto = ({history}) => {
 
     // state del nombre
     const [nombre, guardarNombre] = useState('')
@@ -18,6 +18,13 @@ const NuevoProducto = () => {
 
    const dispatch = useDispatch();
 
+   /**
+    * Use selector es un hook que nos da Redux para leer lo que tenemos en el state
+    * acceder al state del store
+    */
+
+    const cargando = useSelector( state  => state.productos.loading );
+    const error = useSelector (state => state.productos.error);
     /**
      * Funcion que manda a llamar el action de Producto Action
      * se utiliza una funcion  que mande a llamar el action
@@ -47,6 +54,11 @@ const NuevoProducto = () => {
             nombre,
             precio
         });
+
+        // HOME Para mostrar el listado
+
+        history.push('/');
+
     }
 
     return ( 
@@ -87,6 +99,9 @@ const NuevoProducto = () => {
                                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100"
                             >Agregar</button>
                         </form>
+
+                        {cargando ? <p>Cargando...</p> : null}
+                        {error ?  <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null }
                     </div>
                 </div>
            </div>

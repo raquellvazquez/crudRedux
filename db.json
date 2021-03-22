@@ -9,6 +9,11 @@
       "nombre": "Jugo de piña",
       "precio": 7,
       "id": 2
+    },
+    {
+      "nombre": "1",
+      "precio": 2,
+      "id": 3
     }
   ]
 }

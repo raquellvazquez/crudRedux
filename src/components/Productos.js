@@ -1,6 +1,4 @@
 import React, { Fragment, useEffect } from 'react';
-import { traverseTwoPhase } from 'react-dom/test-utils';
-//Redux
 
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -18,6 +16,7 @@ const Productos = () => {
    const cargarProductos = () => dispatch(obtenerProductosAction());
 
    cargarProductos();
+   //eslint-disable-next-line
   }, []);
 
   /**

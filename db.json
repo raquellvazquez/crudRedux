@@ -2,8 +2,13 @@
   "productos": [
     {
       "nombre": "Huevo",
-      "precio": 220,
+      "precio": "500",
       "id": 1
+    },
+    {
+      "nombre": "Jugo de piña",
+      "precio": 7,
+      "id": 2
     }
   ]
 }
